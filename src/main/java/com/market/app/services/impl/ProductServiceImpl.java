@@ -6,11 +6,13 @@ import com.market.app.model.factory.ProductFactory;
 import com.market.app.repository.IProductRepository;
 import com.market.app.services.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+@Service
 public class ProductServiceImpl implements IProductService {
 
     @Autowired

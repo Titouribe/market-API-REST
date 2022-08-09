@@ -15,7 +15,6 @@ public class ProductFactory {
 
         return productDTO != null ?
                 Product.builder()
-                        .idProduct(productDTO.getIdProduct())
                         .category(categoryFactory.create(productDTO.getCategoryDTO()))
                         .productName(productDTO.getProductName())
                         .productPrice(productDTO.getPrice())

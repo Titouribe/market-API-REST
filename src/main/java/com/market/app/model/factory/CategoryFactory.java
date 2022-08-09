@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class CategoryFactory {
 
-    private final ProductFactory productFactory;
     public Category create(CategoryDTO categoryDTO){
 
         return categoryDTO != null ?
@@ -17,9 +16,6 @@ public class CategoryFactory {
                         .idCategory(categoryDTO.getIdCategory())
                         .description(categoryDTO.getDescription())
                         .categoryStatus(categoryDTO.getCategoryStatus())
-                        .products(categoryDTO.getProductDTOList()
-                                .stream()
-                                .map(productFactory::create).toList())
                         .build() : null;
     }
 
@@ -30,9 +26,6 @@ public class CategoryFactory {
                         .idCategory(category.getIdCategory())
                         .categoryStatus(category.getCategoryStatus())
                         .description(category.getDescription())
-                        .productDTOList(category.getProducts()
-                                .stream()
-                                .map(productFactory::create).toList())
                         .build() : null;
     }
 }

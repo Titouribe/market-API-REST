@@ -11,8 +11,6 @@ import java.time.LocalDateTime;
 @RequiredArgsConstructor
 public class PucharseFactory {
 
-    private final ClientFactory clientFactory;
-
     private final PucharsesProductFactory pucharsesProductFactory;
 
     public Pucharse create(PucharseDTO pucharseDTO) {
@@ -20,7 +18,6 @@ public class PucharseFactory {
         return pucharseDTO != null ?
                 Pucharse.builder()
                         .idPucharse(pucharseDTO.getIdPucharse())
-                        .client(clientFactory.create(pucharseDTO.getClientDTO()))
                         .pucharseDate(LocalDateTime.now())
                         .paymentComment(pucharseDTO.getPaymentComment())
                         .paymentMethod(pucharseDTO.getPaymentMethod())
@@ -37,7 +34,6 @@ public class PucharseFactory {
         return pucharse != null ?
                 PucharseDTO.builder()
                         .idPucharse(pucharse.getIdPucharse())
-                        .clientDTO(clientFactory.create(pucharse.getClient()))
                         .pucharseDate(pucharse.getPucharseDate())
                         .paymentComment(pucharse.getPaymentComment())
                         .paymentMethod(pucharse.getPaymentMethod())

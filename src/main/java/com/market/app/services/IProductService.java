@@ -4,8 +4,6 @@ import com.market.app.model.dtos.ProductDTO;
 import com.market.app.model.entities.Product;
 
 import java.util.List;
-import java.util.Map;
-import java.util.Optional;
 import java.util.UUID;
 
 public interface IProductService {
